@@ -19,36 +19,38 @@ export default {
         async getEqualityDemand(context) {
             const responseData = await axios.get('https://futurifest2021-wdb-default-rtdb.firebaseio.com/equalityDemand.json');
 
-            if (!responseData.ok) {
+            if (responseData.status !== 200) {
                 const error = new Error(responseData.message || 'Failed to fetch!');
                 throw error;
             }
 
             const equalityDemands = [];
 
-            for (const key in responseData) {
+            for (const key in responseData.data) {
                 const equalityDemand = {
                     id: key,
-                    email: responseData[key].email,
-                    name: responseData[key].name,
-                    race: responseData[key].race,
-                    companyName: responseData[key].companyName,
-                    position: responseData[key].position,
-                    companyAddress: responseData[key].companyAddress,
-                    companyCity: responseData[key].companyCity,
-                    jobType: responseData[key].jobType,
-                    yearsOfWork: responseData[key].yearsOfWork,
-                    salaryFrom: responseData[key].salaryFrom,
-                    salaryTo: responseData[key].salaryTo,
-                    maleSalaryFrom: responseData[key].maleSalaryFrom,
-                    maleSalaryTo: responseData[key].maleSalaryTo,
-                    description: responseData[key].description,
-                    companySocmed: responseData[key].companySocmed,
+                    email: responseData.data[key].email,
+                    name: responseData.data[key].name,
+                    race: responseData.data[key].race,
+                    companyName: responseData.data[key].companyName,
+                    position: responseData.data[key].position,
+                    companyAddress: responseData.data[key].companyAddress,
+                    companyCity: responseData.data[key].companyCity,
+                    jobType: responseData.data[key].jobType,
+                    yearsOfWork: responseData.data[key].yearsOfWork,
+                    salaryFrom: responseData.data[key].salaryFrom,
+                    salaryTo: responseData.data[key].salaryTo,
+                    maleSalaryFrom: responseData.data[key].maleSalaryFrom,
+                    maleSalaryTo: responseData.data[key].maleSalaryTo,
+                    description: responseData.data[key].description,
+                    companySocmed: responseData.data[key].companySocmed,
                 };
                 equalityDemands.push(equalityDemand);
             }
 
-            context.commit('getEqualityDemand', equalityDemands);
+            context.commit('getEqualityDemand', {
+                equalityDemands: equalityDemands
+            });
 
         },
         async storeEqualityDemand(context, { email, name, race, companyName, position, companyAddress, companyCity, jobType, yearsOfWork, salaryFrom, salaryTo, maleSalaryFrom, maleSalaryTo, description, companySocmed }){
@@ -81,6 +83,11 @@ export default {
 
             context.commit('addEqualityDemand', equalityDemand)
 
+        }
+    },
+    getters: {
+        equalityDemands(state){
+            return state.equalityDemands;
         }
     }
 }
