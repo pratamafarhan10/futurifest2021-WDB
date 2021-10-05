@@ -13,7 +13,7 @@
           their work and confining them to specific gender roles.
         </p>
         <a class="btn btn-primary btn-purple" href="/equality-demand"
-          >Demand Equality Now</a
+          >Demand For Equality Now</a
         >
       </div>
       <div class="col-12 col-md-7 col-lg-6">
