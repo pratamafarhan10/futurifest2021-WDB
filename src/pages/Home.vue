@@ -121,6 +121,14 @@
   </div>
 </template>
 
+<script>
+export default {
+  created() {
+    document.title = "Home";
+  },
+};
+</script>
+
 <style scoped>
 .text-lg {
   font-size: 2rem;

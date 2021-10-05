@@ -119,6 +119,7 @@ export default {
     },
   },
   created() {
+    document.title = 'Equality Demand';
     this.loadEqualityDemands();
   },
 };

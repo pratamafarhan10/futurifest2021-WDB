@@ -350,6 +350,9 @@ export default {
       }
     },
   },
+  created(){
+      document.title = 'Create Equality Demand';
+  }
 };
 </script>
 
