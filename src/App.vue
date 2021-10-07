@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Navbar from "./components/molecules/Navbar.vue";
+import Navbar from "./components/Navbar.vue";
 export default {
   components: {
     Navbar,
