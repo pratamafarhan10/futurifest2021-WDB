@@ -88,6 +88,10 @@ export default {
     getters: {
         equalityDemands(state){
             return state.equalityDemands;
+        },
+        getEqualityDemandById: (state) => (id) => {
+            let equalityDemand = state.equalityDemands.filter(ed => ed.id === id)[0];
+            return equalityDemand;
         }
     }
 }

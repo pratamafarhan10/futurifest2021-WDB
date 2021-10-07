@@ -20,7 +20,7 @@ const router = createRouter({
             path: '/equality-demand/create',
             name: 'create equality demand',
             component: CreateEqualityDemand
-        }
+        },
     ],
     linkActiveClass: 'active',
     scrollBehavior(to, from, savedPosition) {
