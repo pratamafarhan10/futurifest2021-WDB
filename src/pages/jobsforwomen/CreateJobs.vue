@@ -13,7 +13,7 @@
 
     <!-- form -->
     <section class="mt-4">
-      <form @submit.prevent="submitEqualityDemand">
+      <form @submit.prevent="submitJob">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="companyName">Company name</label>
@@ -235,7 +235,7 @@ export default {
       companyName: "",
       companyCity: "",
       companyWebsite: "",
-      applyUrl: '',
+      applyUrl: "",
       jobType: "",
       experienceLevel: "",
       role: "",
@@ -251,6 +251,62 @@ export default {
       formIsInvalid: false,
       errorMessage: "",
     };
+  },
+  methods: {
+    async submitJob() {
+      this.formIsInvalid = false;
+      if (
+        this.position == "" &&
+        this.companyName == "" &&
+        this.companyCity == "" &&
+        this.companyWebsite == "" &&
+        this.applyUrl == "" &&
+        this.jobType == "" &&
+        this.experienceLevel == "" &&
+        this.role == "" &&
+        this.jobDesc == "" &&
+        this.responsibility == "" &&
+        this.lookingFor == "" &&
+        this.bonusPoint == "" &&
+        this.offering == "" &&
+        this.salaryFrom == 0 &&
+        this.salaryTo == 0 &&
+        this.maleSalaryFrom == 0 &&
+        this.maleSalaryTo == 0
+      ) {
+        this.formIsInvalid = true;
+      } else {
+        try {
+          await this.$store.dispatch({
+            type: "jobs/storeJobs",
+            position: this.position,
+            companyName: this.companyName,
+            companyCity: this.companyCity,
+            companyWebsite: this.companyWebsite,
+            applyUrl: this.applyUrl,
+            jobType: this.jobType,
+            experienceLevel: this.experienceLevel,
+            role: this.role,
+            jobDesc: this.jobDesc,
+            responsibility: this.responsibility,
+            lookingFor: this.lookingFor,
+            bonusPoint: this.bonusPoint,
+            offering: this.offering,
+            salaryFrom: this.salaryFrom,
+            salaryTo: this.salaryTo,
+            maleSalaryFrom: this.maleSalaryFrom,
+            maleSalaryTo: this.maleSalaryTo,
+          });
+          this.$router.push({ name: "jobs index" });
+        } catch (error) {
+          this.errorMessage = error.message;
+          this.formIsInvalid = true;
+        }
+      }
+    },
+  },
+  created() {
+    document.title = "Create Equality Demand";
   },
 };
 </script>
