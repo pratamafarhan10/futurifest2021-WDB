@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from './pages/Home.vue';
-import EqualityDemand from './pages/EqualityDemand/EqualityDemand.vue';
-import CreateEqualityDemand from './pages/EqualityDemand/CreateEqualityDemand.vue';
+import EqualityDemand from './pages/equalitydemand/EqualityDemand.vue';
+import CreateEqualityDemand from './pages/equalitydemand/CreateEqualityDemand.vue';
+import JobsIndex from './pages/jobsforwomen/JobsIndex.vue';
+import CreateJobs from './pages/jobsforwomen/CreateJobs.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -20,6 +22,16 @@ const router = createRouter({
             path: '/equality-demand/create',
             name: 'create equality demand',
             component: CreateEqualityDemand
+        },
+        {
+            path: '/jobs-for-women',
+            name: 'jobs index',
+            component: JobsIndex
+        },
+        {
+            path: '/jobs-for-women/create',
+            name: 'post jobs',
+            component: CreateJobs
         },
     ],
     linkActiveClass: 'active',

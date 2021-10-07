@@ -26,11 +26,11 @@
               >Equality Demand</router-link
             >
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <router-link class="nav-link" to="/jobs-for-women"
               >Jobs for Women</router-link
             >
-          </li> -->
+          </li>
         </ul>
         <a href="#" class="btn btn-outline-success my-2 my-sm-0">Login</a>
       </div>

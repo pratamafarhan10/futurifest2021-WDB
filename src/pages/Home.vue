@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="pt-4 pt-md-5 mt-5">
+    <section class="pt-4 pt-md-5 mt-3">
       <div class="row align-items-center">
         <div class="col-12 col-md-5 col-lg-6">
           <p class="text-lg text-start text-md-start">Welcome to</p>

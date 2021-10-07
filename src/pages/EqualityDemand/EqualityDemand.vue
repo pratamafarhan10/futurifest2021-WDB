@@ -3,7 +3,9 @@
     <!-- Feature introduction -->
     <section>
       <div class="row">
-        <h1>Equality Demand</h1>
+        <h1>✊Equality Demand</h1>
+      </div>
+      <div class="row">
         <p class="text-secondary">
           This is a platform where women can share the inequalities they
           experience in the company by providing information on how much they
@@ -29,7 +31,12 @@
 
     <!-- Submission -->
     <section class="mt-3">
-      <div class="row">
+      <div class="row justify-content-center" v-if="isLoading">
+        <div class="spinner-border text-purple" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <div class="row" v-else>
         <div
           class="col-12 col-md-4 d-flex justify-content-center p-0"
           v-for="ed in equalityDemands"
@@ -209,15 +216,18 @@ export default {
   data() {
     return {
       equalityDemands: [],
+      isLoading: false,
     };
   },
   methods: {
     async loadEqualityDemands() {
+      this.isLoading = true;
       try {
         await this.$store.dispatch("equalityDemand/getEqualityDemand");
         this.equalityDemands = await this.$store.getters[
           "equalityDemand/equalityDemands"
         ];
+        this.isLoading = false;
       } catch (error) {
         console.log(error.message);
       }
