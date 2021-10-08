@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="col-12 col-md-4 d-flex justify-content-center p-0 mt-2"
-  >
+  <div class="col-12 col-md-4 d-flex justify-content-center p-0 mt-2">
     <div class="card w-90">
       <div class="card-body">
         <h5 class="card-title">
@@ -43,10 +41,34 @@
         <p class="card-text">
           <b>Company Social Media</b>
         </p>
-        <a :href="ed.companySocmed.instagram" class="card-link"><img src="../assets/instagram.svg" alt="instagram" width="30" height="30"></a>
-        <a :href="ed.companySocmed.twitter" class="card-link"><img src="../assets/twitter.svg" alt="twitter" width="30" height="30"></a>
-        <a :href="ed.companySocmed.linkedin" class="card-link"><img src="../assets/linkedin.svg" alt="linkedin" width="30" height="30"></a>
-        <a :href="ed.companySocmed.facebook" class="card-link"><img src="../assets/facebook.svg" alt="facebook" width="30" height="30"></a>
+        <a :href="ed.companySocmed.instagram" class="card-link"
+          ><img
+            src="../assets/instagram.svg"
+            alt="instagram"
+            width="30"
+            height="30"
+        /></a>
+        <a :href="ed.companySocmed.twitter" class="card-link"
+          ><img
+            src="../assets/twitter.svg"
+            alt="twitter"
+            width="30"
+            height="30"
+        /></a>
+        <a :href="ed.companySocmed.linkedin" class="card-link"
+          ><img
+            src="../assets/linkedin.svg"
+            alt="linkedin"
+            width="30"
+            height="30"
+        /></a>
+        <a :href="ed.companySocmed.facebook" class="card-link"
+          ><img
+            src="../assets/facebook.svg"
+            alt="facebook"
+            width="30"
+            height="30"
+        /></a>
       </div>
       <div class="card-footer">
         <!-- Button trigger modal -->
@@ -128,18 +150,37 @@
                 <p>
                   {{ ed.description }}
                 </p>
+                <p>
+                  <b>Company Social Media</b>
+                </p>
                 <a :href="ed.companySocmed.instagram" class="card-link"
-                  >Instagram</a
-                >
+                  ><img
+                    src="../assets/instagram.svg"
+                    alt="instagram"
+                    width="30"
+                    height="30"
+                /></a>
                 <a :href="ed.companySocmed.twitter" class="card-link"
-                  >Twitter</a
-                >
+                  ><img
+                    src="../assets/twitter.svg"
+                    alt="twitter"
+                    width="30"
+                    height="30"
+                /></a>
                 <a :href="ed.companySocmed.linkedin" class="card-link"
-                  >Linkedin</a
-                >
+                  ><img
+                    src="../assets/linkedin.svg"
+                    alt="linkedin"
+                    width="30"
+                    height="30"
+                /></a>
                 <a :href="ed.companySocmed.facebook" class="card-link"
-                  >Facebook</a
-                >
+                  ><img
+                    src="../assets/facebook.svg"
+                    alt="facebook"
+                    width="30"
+                    height="30"
+                /></a>
               </div>
               <div class="modal-footer">
                 <button
@@ -160,8 +201,8 @@
 
 <script>
 export default {
-    props: ['ed']
-}
+  props: ["ed"],
+};
 </script>
 
 <style scoped>
