@@ -40,10 +40,13 @@
           ${{ ed.maleSalaryFrom }} - ${{ ed.maleSalaryTo }}
         </p>
         <p class="card-text">{{ ed.description.slice(0, 150) }}...</p>
-        <a :href="ed.companySocmed.instagram" class="card-link">Instagram</a>
-        <a :href="ed.companySocmed.twitter" class="card-link">Twitter</a>
-        <a :href="ed.companySocmed.linkedin" class="card-link">Linkedin</a>
-        <a :href="ed.companySocmed.facebook" class="card-link">Facebook</a>
+        <p class="card-text">
+          <b>Company Social Media</b>
+        </p>
+        <a :href="ed.companySocmed.instagram" class="card-link"><img src="../assets/instagram.svg" alt="instagram" width="30" height="30"></a>
+        <a :href="ed.companySocmed.twitter" class="card-link"><img src="../assets/twitter.svg" alt="twitter" width="30" height="30"></a>
+        <a :href="ed.companySocmed.linkedin" class="card-link"><img src="../assets/linkedin.svg" alt="linkedin" width="30" height="30"></a>
+        <a :href="ed.companySocmed.facebook" class="card-link"><img src="../assets/facebook.svg" alt="facebook" width="30" height="30"></a>
       </div>
       <div class="card-footer">
         <!-- Button trigger modal -->
